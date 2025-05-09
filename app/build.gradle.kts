@@ -1,8 +1,9 @@
 plugins {
-    alias(libs.plugins.android.application)
+    id("com.android.application")
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     id("kotlin-kapt")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -56,14 +57,21 @@ dependencies {
     implementation(libs.ui)
     implementation(libs.material3)
     implementation(libs.ui.tooling.preview)
+    implementation(libs.firebase.auth.ktx)
+    implementation(libs.androidx.navigation.compose.jvmstubs)
     debugImplementation(libs.ui.tooling)
 
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
 
     implementation(libs.coil.compose)
 
-    //Api RAWG
+    implementation(libs.kotlinx.coroutines.android)
+
+    //API RAWG
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
+
 
     // Room
     implementation(libs.androidx.room.runtime)

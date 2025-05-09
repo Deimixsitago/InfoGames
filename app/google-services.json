@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "550969196944",
+    "project_id": "infogames-82c67",
+    "storage_bucket": "infogames-82c67.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:550969196944:android:7d0eb774869624bc62b315",
+        "android_client_info": {
+          "package_name": "com.example.infogames"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmXHH2fyESioubcaHJ4OEwySCrTCnyVC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
