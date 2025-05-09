@@ -92,7 +92,8 @@ fun MainScreen(navController: NavController, modifier: Modifier = Modifier) {
                 try {
                     val response = RetrofitInstance.api.getGames(
                         apiKey = "076ab5ff6e1c4261a5cfcf7a57cbf2e4",
-                        search = query
+                        pageSize = if (query.isNotBlank()) 30 else 10,
+                        search = query.takeIf { it.isNotBlank() }
                     )
 
                     juegos = response.results.map {
