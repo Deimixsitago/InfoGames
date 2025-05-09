@@ -1,3 +1,5 @@
+package com.example.infogames.ui.screens
+
 import androidx.compose.foundation.Image
 import coil.compose.rememberAsyncImagePainter
 import androidx.compose.ui.layout.ContentScale
@@ -8,7 +10,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import com.example.infogames.data.Videojuego
