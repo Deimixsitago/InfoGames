@@ -53,32 +53,37 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.core.ktx.v1160)
     implementation(libs.androidx.activity.compose.v1101)
-    implementation("androidx.compose.ui:ui:1.8.1")
-    implementation("androidx.compose.material3:material3:1.3.2")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.8.1")
-    debugImplementation("androidx.compose.ui:ui-tooling:1.8.1")
+    implementation(libs.ui)
+    implementation(libs.material3)
+    implementation(libs.ui.tooling.preview)
+    debugImplementation(libs.ui.tooling)
 
-    implementation("io.coil-kt:coil-compose:2.4.0")
+
+    implementation(libs.coil.compose)
+
+    //Api RAWG
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
 
     // Room
-    implementation("androidx.room:room-runtime:2.7.1")
-    kapt("androidx.room:room-compiler:2.7.1")
+    implementation(libs.androidx.room.runtime)
+    kapt(libs.androidx.room.compiler)
 
     // Coroutines y ViewModel
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.0")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.9.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.kotlinx.coroutines.android)
 
     // Retrofit
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
 
     // Navegación
-    implementation("androidx.navigation:navigation-fragment-ktx:2.9.0")
-    implementation("androidx.navigation:navigation-ui-ktx:2.9.0")
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
 
     // Coil
-    implementation("io.coil-kt:coil:2.4.0")
+    implementation(libs.coil)
 
     // Test
     testImplementation(libs.junit)
