@@ -20,6 +20,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.infogames.ui.screens.LoginScreen
 import com.example.infogames.ui.screens.RegisterScreen
 import com.example.infogames.ui.screens.MainScreen
+import com.example.infogames.ui.screens.CreditsScreen
 import androidx.navigation.NavHostController
 
 
@@ -47,7 +48,8 @@ fun SetupNavGraph(navController: NavHostController) { // Tipo correcto
     ) {
         composable("login_screen") { LoginScreen(navController) }
         composable("register_screen") { RegisterScreen(navController) }
-        composable("main_screen") { MainScreen() } // Sin parámetro
+        composable("credits_screen") { CreditsScreen(navController) }
+        composable("main_screen") { MainScreen(navController) }
     }
 }
 

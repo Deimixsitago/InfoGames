@@ -40,6 +40,7 @@ fun RegisterScreen(navController: NavController) {
                 .padding(24.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            Spacer(modifier = Modifier.height(20.dp))
             // Título
             Text(
                 text = "Crear Cuenta",
@@ -160,6 +161,19 @@ fun RegisterScreen(navController: NavController) {
                 )
             ) {
                 Text("Registrarse", fontSize = 16.sp)
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            // Enlace a Registro
+            TextButton(
+                onClick = { navController.navigate("login_screen") }
+            ) {
+                Text(
+                    "¿Ya tienes cuenta? Inicia Sesión",
+                    color = Color(0xFF03DAC5),
+                    fontWeight = FontWeight.Medium
+                )
             }
         }
     }

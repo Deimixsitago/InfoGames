@@ -10,5 +10,6 @@ data class Videojuego(
     val generos: String,
     val plataformas: String,
     val rating: Double,
-    val imagenUrl: String
+    val imagenUrl: String,
+    val año: String
 )

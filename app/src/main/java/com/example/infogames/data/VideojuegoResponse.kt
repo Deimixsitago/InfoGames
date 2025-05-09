@@ -9,7 +9,8 @@ data class VideojuegoDTO(
     val rating: Double,
     val background_image: String,
     val genres: List<Genre>,
-    val platforms: List<PlatformWrapper>
+    val platforms: List<PlatformWrapper>,
+    val released: String
 )
 
 data class Genre(val name: String)

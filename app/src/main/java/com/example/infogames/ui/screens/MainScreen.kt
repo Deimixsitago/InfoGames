@@ -21,10 +21,13 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import com.example.infogames.network.RetrofitInstance
+import androidx.navigation.NavController
 import androidx.compose.material3.*
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.LineHeightStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.Alignment
 
 @Composable
 fun GameCard(juego: Videojuego, modifier: Modifier = Modifier) {
@@ -50,6 +53,7 @@ fun GameCard(juego: Videojuego, modifier: Modifier = Modifier) {
             Text(juego.nombre, style = MaterialTheme.typography.titleLarge, color = Color.White)
             Text(juego.generos, color = Color.LightGray)
             Text(juego.plataformas, color = Color.Gray)
+            Text(juego.año, color = Color.LightGray)
             Text("⭐ ${juego.rating}", color = Color.Yellow)
         }
     }
@@ -57,61 +61,63 @@ fun GameCard(juego: Videojuego, modifier: Modifier = Modifier) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen(modifier: Modifier = Modifier) {
+fun MainScreen(navController: NavController, modifier: Modifier = Modifier) {
     var juegos by remember { mutableStateOf<List<Videojuego>>(emptyList()) }
     var query by remember { mutableStateOf("") }
 
-    Scaffold(
+        Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("InfoGames",
-                    modifier = Modifier.padding(start = 16.dp, top = 0.dp, bottom = 5.dp),
-                    style = MaterialTheme.typography.titleLarge.copy(
-                        fontWeight = FontWeight.Bold, // Poner en negrita
-                        fontSize = 46.sp // Cambiar tamaño de fuente
-                    ), )
+                title = {
+                    Text(
+                        "InfoGames",
+                        modifier = Modifier.padding(start = 16.dp),
+                        style = MaterialTheme.typography.titleLarge.copy(
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 46.sp
+                        )
+                    )
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color(0xFF1E1E2E), // Fondo oscuro personalizado
-                    titleContentColor = Color.White     // Color del texto
+                    containerColor = Color(0xFF1E1E2E),
+                    titleContentColor = Color.White
                 )
             )
         },
         modifier = modifier
     ) { innerPadding ->
-        LaunchedEffect(query) {
-            kotlinx.coroutines.delay(500) // debounce para evitar muchas peticiones
+            LaunchedEffect(query) {
+                kotlinx.coroutines.delay(500) // debounce para evitar muchas peticiones
 
-            try {
-                val response = RetrofitInstance.api.getGames(
-                    apiKey = "076ab5ff6e1c4261a5cfcf7a57cbf2e4",
-                    search = query
-                )
-
-                juegos = response.results.map {
-                    Videojuego(
-                        nombre = it.name,
-                        generos = it.genres.joinToString { g -> g.name },
-                        plataformas = it.platforms.joinToString { p -> p.platform.name },
-                        rating = it.rating,
-                        imagenUrl = it.background_image
+                try {
+                    val response = RetrofitInstance.api.getGames(
+                        apiKey = "076ab5ff6e1c4261a5cfcf7a57cbf2e4",
+                        search = query
                     )
-                }
-            } catch (e: Exception) {
-                Log.e("MainScreen", "Error al buscar juegos: ${e.message}")
-            }
-        }
 
+                    juegos = response.results.map {
+                        Videojuego(
+                            nombre = it.name,
+                            generos = it.genres.joinToString { g -> g.name },
+                            plataformas = it.platforms.joinToString { p -> p.platform.name },
+                            rating = it.rating,
+                            año = it.released,
+                            imagenUrl = it.background_image
+                        )
+                    }
+                } catch (e: Exception) {
+                    Log.e("MainScreen", "Error al buscar juegos: ${e.message}")
+                }
+            }
         Column(
             modifier = Modifier
                 .padding(
-                    top = innerPadding.calculateTopPadding() - 8.dp, // reduce el espacio superior
+                    top = innerPadding.calculateTopPadding() - 8.dp,
                     start = 16.dp,
                     end = 16.dp,
                     bottom = 16.dp
                 )
-        )
-        {
+        ) {
             OutlinedTextField(
                 value = query,
                 onValueChange = { query = it },
@@ -121,7 +127,20 @@ fun MainScreen(modifier: Modifier = Modifier) {
                     .padding(vertical = 20.dp),
                 singleLine = true
             )
-            if(query.isEmpty()){
+
+            // Botón de navegación a créditos
+            TextButton(
+                onClick = { navController.navigate("credits_screen") },
+                modifier = Modifier.align(Alignment.End)
+            ) {
+                Text(
+                    "Créditos",
+                    color = Color(0xFF03DAC5),
+                    fontWeight = FontWeight.Medium
+                )
+            }
+
+            if (query.isEmpty()) {
                 Text(
                     text = "Top 10 juegos más populares",
                     modifier = Modifier
@@ -135,9 +154,6 @@ fun MainScreen(modifier: Modifier = Modifier) {
                     textAlign = TextAlign.Center
                 )
             }
-
-
-
 
             LazyColumn {
                 items(juegos) { juego ->
