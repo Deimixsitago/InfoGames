@@ -20,40 +20,112 @@ import androidx.navigation.compose.rememberNavController
 import com.example.infogames.ui.theme.InfoGamesTheme
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import androidx.compose.foundation.background
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 
 
 @Composable
 fun LoginScreen(navController: NavController) {
     val context = LocalContext.current
     val auth = FirebaseAuth.getInstance()
-    val email = remember { mutableStateOf("") }
-    val password = remember { mutableStateOf("") }
+    var email by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("") }
 
-    Column(modifier = Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-        TextField(value = email.value, onValueChange = { email.value = it }, label = { Text("Email") })
-        TextField(value = password.value, onValueChange = { password.value = it }, label = { Text("Password") }, visualTransformation = PasswordVisualTransformation())
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color(0xFF1E1E2E)) // ✅ Paréntesis cerrado
+    ) { // ✅ Llave de apertura correcta
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(24.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            // Título
+            Text(
+                text = "Iniciar Sesión",
+                style = MaterialTheme.typography.headlineLarge.copy(
+                    color = Color.White,
+                    fontWeight = FontWeight.Bold
+                ),
+                modifier = Modifier.padding(bottom = 40.dp)
+            ) // ✅ Paréntesis cerrado
 
-        Button(onClick = {
-            loginUser (auth, email.value, password.value) { user, error ->
-                if (user != null) {
-                    Toast.makeText(context, "Welcome ${user.email}", Toast.LENGTH_SHORT).show()
-                    navController.navigate("main_screen") // Navigate to home screen after login
-                } else {
-                    Toast.makeText(context, error ?: "Error", Toast.LENGTH_SHORT).show()
-                }
+            // Campo Email
+            OutlinedTextField(
+                value = email,
+                onValueChange = { email = it },
+                label = { Text("Email") },
+                modifier = Modifier.fillMaxWidth(),
+                colors = TextFieldDefaults.colors(
+                    focusedTextColor = Color.White,
+                    unfocusedTextColor = Color.White,
+                    focusedContainerColor = Color.Transparent,
+                    unfocusedContainerColor = Color.Transparent,
+                    focusedLabelColor = Color.LightGray
+                )
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            // **Campo Contraseña**
+            OutlinedTextField(
+                value = password,
+                onValueChange = { password = it },
+                label = { Text("Contraseña") },
+                modifier = Modifier.fillMaxWidth(),
+                visualTransformation = PasswordVisualTransformation(),
+                colors = TextFieldDefaults.colors(
+                    focusedTextColor = Color.White,
+                    unfocusedTextColor = Color.White,
+                    focusedContainerColor = Color.Transparent,
+                    unfocusedContainerColor = Color.Transparent,
+                    focusedLabelColor = Color.LightGray
+                )
+            )
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            // Botón Login
+            Button(
+                onClick = {
+                    if (email.isBlank() || password.isBlank()) {
+                        Toast.makeText(context, "Complete todos los campos", Toast.LENGTH_SHORT).show()
+                    } else {
+                        loginUser(auth, email, password) { user, error ->
+                            if (user != null) {
+                                navController.navigate("main_screen")
+                            } else {
+                                Toast.makeText(context, "Error: ${error ?: "Credenciales inválidas"}", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    }
+                },
+                modifier = Modifier.fillMaxWidth(),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(0xFF6200EE)
+                )
+            ) {
+                Text("Ingresar", fontSize = 16.sp)
             }
-        }) {
-            Text("Login")
-        }
 
-        Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
-        TextButton(onClick = { navController.navigate("register_screen") }) {
-            Text("Don't have an account? Register here", color = Color.Blue)
+            // Enlace a Registro
+            TextButton(
+                onClick = { navController.navigate("register_screen") }
+            ) {
+                Text(
+                    "¿No tienes cuenta? Regístrate",
+                    color = Color(0xFF03DAC5),
+                    fontWeight = FontWeight.Medium
+                )
+            }
         }
     }
 }
-
 
 fun loginUser(
     auth: FirebaseAuth,
