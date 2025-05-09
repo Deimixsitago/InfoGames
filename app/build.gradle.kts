@@ -20,7 +20,7 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.10" // o la versión que uses
+        kotlinCompilerExtensionVersion = "1.5.11" // o la versión que uses
     }
     buildTypes {
         release {
@@ -58,8 +58,11 @@ dependencies {
     implementation(libs.material3)
     implementation(libs.ui.tooling.preview)
     implementation(libs.firebase.auth.ktx)
-    implementation(libs.androidx.navigation.compose.jvmstubs)
+
     debugImplementation(libs.ui.tooling)
+
+    implementation("androidx.compose.material3:material3:1.2.1")
+    implementation("androidx.compose.material:material-icons-extended:1.6.7")
 
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
@@ -87,8 +90,23 @@ dependencies {
     implementation(libs.converter.gson)
 
     // Navegación
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+
+    // Jetpack Compose
+    implementation(platform(libs.androidx.compose.bom))
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui-graphics")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    implementation("androidx.compose.material3:material3")
+    implementation("androidx.activity:activity-compose:1.8.2")
+
+    // Firebase
+    implementation(platform("com.google.firebase:firebase-bom:32.8.1"))
+    implementation("com.google.firebase:firebase-auth-ktx")
+
+    // Corrutinas
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0")
+    
 
     // Coil
     implementation(libs.coil)

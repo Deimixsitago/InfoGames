@@ -14,6 +14,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.infogames.ui.theme.InfoGamesTheme
 import com.example.infogames.data.Videojuego
 import com.example.infogames.ui.screens.MainScreen
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.infogames.ui.screens.LoginScreen
+import com.example.infogames.ui.screens.RegisterScreen
+import com.example.infogames.ui.screens.MainScreen
+import androidx.navigation.NavHostController
+
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,11 +30,24 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             InfoGamesTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MainScreen(modifier = Modifier.padding(innerPadding))
+                val navController = rememberNavController()
+                Scaffold(modifier = Modifier.fillMaxSize()) {
+                    SetupNavGraph(navController = navController)
                 }
             }
         }
+    }
+}
+
+@Composable
+fun SetupNavGraph(navController: NavHostController) { // Tipo correcto
+    NavHost(
+        navController = navController,
+        startDestination = "login_screen"
+    ) {
+        composable("login_screen") { LoginScreen(navController) }
+        composable("register_screen") { RegisterScreen(navController) }
+        composable("main_screen") { MainScreen() } // Sin parámetro
     }
 }
 

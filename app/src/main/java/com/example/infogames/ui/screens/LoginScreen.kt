@@ -29,21 +29,27 @@ fun LoginScreen(navController: NavController) {
     val email = remember { mutableStateOf("") }
     val password = remember { mutableStateOf("") }
 
-    Column(modifier = Modifier.padding(16.dp)) {
+    Column(modifier = Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
         TextField(value = email.value, onValueChange = { email.value = it }, label = { Text("Email") })
-        TextField(value = password.value, onValueChange = { password.value = it }, label = { Text("Password") })
+        TextField(value = password.value, onValueChange = { password.value = it }, label = { Text("Password") }, visualTransformation = PasswordVisualTransformation())
 
         Button(onClick = {
-            loginUser(auth, email.value, password.value) { user, error ->
+            loginUser (auth, email.value, password.value) { user, error ->
                 if (user != null) {
-                    Toast.makeText(context, "Bienvenido ${user.email}", Toast.LENGTH_SHORT).show()
-                    navController.navigate("home_screen")
+                    Toast.makeText(context, "Welcome ${user.email}", Toast.LENGTH_SHORT).show()
+                    navController.navigate("main_screen") // Navigate to home screen after login
                 } else {
                     Toast.makeText(context, error ?: "Error", Toast.LENGTH_SHORT).show()
                 }
             }
         }) {
-            Text("Iniciar sesión")
+            Text("Login")
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        TextButton(onClick = { navController.navigate("register_screen") }) {
+            Text("Don't have an account? Register here", color = Color.Blue)
         }
     }
 }
@@ -60,11 +66,8 @@ fun loginUser(
             if (task.isSuccessful) {
                 onResult(auth.currentUser, null)
             } else {
-                val errorMessage = task.exception?.message ?: "Error desconocido"
+                val errorMessage = task.exception?.message ?: "Unknown error"
                 onResult(null, errorMessage)
             }
         }
 }
-
-
-
