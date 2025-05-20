@@ -4,12 +4,14 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     id("kotlin-kapt")
     id("com.google.gms.google-services")
+    id("jacoco")
     id("org.sonarqube") version "4.4.1.3373"
 }
 
 android {
     namespace = "com.example.infogames"
     compileSdk = 35
+
 
     defaultConfig {
         applicationId = "com.example.infogames"
@@ -114,6 +116,7 @@ dependencies {
 
     // Espresso
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     // Test
