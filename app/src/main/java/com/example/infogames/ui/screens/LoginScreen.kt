@@ -146,3 +146,246 @@ fun loginUser(
             }
         }
 }
+
+
+fun funcionLarga2122() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLarga121() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+fun funcionLarg3a1() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLarg3a2() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funci4onLarga3() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLarfga4() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcioncLarga5() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionaLarga6() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionrLarga7() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcinonLarga8() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funciconLarga9() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcioxnLarga10() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funzcionLarga11() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun fudncionLarga12() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcioynLarga13() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLaurga14() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLafrga15() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcisonLarga16() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLargaa17() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLsarga18() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLaxrga19() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLaerga20() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}

@@ -9,44 +9,6 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -95,4 +57,245 @@ fun CreditsScreen(navController: NavController, modifier: Modifier = Modifier) {
             Text("Gracias por usar esta app ❤️", color = Color.White)
         }
     }
+}
+
+fun funcionLarga212() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLarga21() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+fun funcionLarga1() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLarga2() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLarga3() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLarga4() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLarga5() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLarga6() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLarga7() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLarga8() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLarga9() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLarga10() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLarga11() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLarga12() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLarga13() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLarga14() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLarga15() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLarga16() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLarga17() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLarga18() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLarga19() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
+}
+
+fun funcionLarga20() {
+    val a = 1
+    val b = 2
+    val c = a + b
+    println("Resultado: $c")
+    for (i in 1..5) {
+        println("Iteración $i")
+    }
+    println("Fin de funcionLarga1")
 }
