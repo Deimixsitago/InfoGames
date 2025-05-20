@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     id("kotlin-kapt")
     id("com.google.gms.google-services")
+    id("org.sonarqube") version "4.4.1.3373"
 }
 
 android {
@@ -58,10 +59,10 @@ dependencies {
     implementation(libs.material3)
     implementation(libs.ui.tooling.preview)
     implementation(libs.firebase.auth.ktx)
+    implementation(libs.androidx.navigation.testing.android)
 
     debugImplementation(libs.ui.tooling)
 
-    implementation("androidx.compose.material3:material3:1.2.1")
     implementation("androidx.compose.material:material-icons-extended:1.6.7")
 
     implementation(platform(libs.firebase.bom))
@@ -110,6 +111,10 @@ dependencies {
 
     // Coil
     implementation(libs.coil)
+
+    // Espresso
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     // Test
     testImplementation(libs.junit)

@@ -28,13 +28,15 @@ import androidx.compose.ui.text.style.LineHeightStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.platform.testTag
 
 @Composable
 fun GameCard(juego: Videojuego, modifier: Modifier = Modifier) {
     Card(
         modifier = modifier
             .fillMaxWidth()
-            .padding(vertical = 0.dp),
+            .padding(vertical = 0.dp)
+            .testTag("gameItem"),  // <- TAG para los items
         colors = CardDefaults.cardColors(containerColor = Color(0xFF1E1E2E))//Color original 0xFF1E1E2E
     ) {
         Column(modifier = Modifier.padding(start = 16.dp,
@@ -125,9 +127,11 @@ fun MainScreen(navController: NavController, modifier: Modifier = Modifier) {
                 label = { Text("Buscar juego") },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 20.dp),
+                    .padding(vertical = 20.dp)
+                    .testTag("searchField"),  // <-- este es el tag que necesitas agregar
                 singleLine = true
             )
+
 
             // Botón de navegación a créditos
             TextButton(
@@ -158,9 +162,13 @@ fun MainScreen(navController: NavController, modifier: Modifier = Modifier) {
 
             LazyColumn {
                 items(juegos) { juego ->
-                    GameCard(juego = juego)
+                    GameCard(
+                        juego = juego,
+                        modifier = Modifier.testTag("gameItem")
+                    )
                     Spacer(modifier = Modifier.height(12.dp))
                 }
+
             }
         }
     }
