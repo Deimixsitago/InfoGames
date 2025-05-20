@@ -21,9 +21,20 @@ class LoginScreenTest {
         composeTestRule.onNodeWithText("Contraseña").assertIsDisplayed()
         composeTestRule.onNodeWithText("Ingresar").assertIsDisplayed()
     }
+    fun loginScreen_elementsDisplayed_dupli() {
+        composeTestRule.onNodeWithText("Iniciar Sesión").assertIsDisplayed()
+        composeTestRule.onNodeWithText("Email").assertIsDisplayed()
+        composeTestRule.onNodeWithText("Contraseña").assertIsDisplayed()
+        composeTestRule.onNodeWithText("Ingresar").assertIsDisplayed()
+    }
 
     @Test
     fun loginScreen_emptyFields_showsToast() {
+        composeTestRule.onNodeWithText("Ingresar").performClick()
+        // Aquí no podemos testear Toast directamente, pero podrías
+        // verificar que el error (mensaje o estado) cambió en UI si lo tienes.
+    }
+    fun loginScreen_emptyFields_showsToast_dupli() {
         composeTestRule.onNodeWithText("Ingresar").performClick()
         // Aquí no podemos testear Toast directamente, pero podrías
         // verificar que el error (mensaje o estado) cambió en UI si lo tienes.
@@ -44,4 +55,22 @@ class LoginScreenTest {
         // Confirmar que el título está visible
         composeTestRule.onNodeWithText("InfoGames").assertIsDisplayed()
     }
+
+    @Test
+    fun loginScreen_validCredentials_navigatesToMainScreen_dupli() {
+        // Ingresar credenciales válidas
+        composeTestRule.onNodeWithText("Email").performTextInput("test@lsls.com")
+        composeTestRule.onNodeWithText("Contraseña").performTextInput("123_abc")
+        composeTestRule.onNodeWithText("Ingresar").performClick()
+
+        // Esperar a que aparezca algo de MainScreen (p.ej. título "InfoGames")
+        composeTestRule.waitUntil(timeoutMillis = 7000) {
+            composeTestRule.onAllNodesWithText("InfoGames").fetchSemanticsNodes().isNotEmpty()
+        }
+
+        // Confirmar que el título está visible
+        composeTestRule.onNodeWithText("InfoGames").assertIsDisplayed()
+    }
+
+
 }
